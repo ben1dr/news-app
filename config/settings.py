@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver_nostatic',
+    'whitenoise.runserver_nostatic', # new
     'django.contrib.staticfiles',
     
     # 3rd party
@@ -58,7 +58,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', # new
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -124,6 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 # TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tehran'
 
 USE_I18N = True
 
@@ -137,7 +138,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
-STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
+STATIC_ROOT = STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles')) # new
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
